@@ -701,6 +701,28 @@
     </div>
 
   </div>
+
+
+  // Photo Slider Arrow Controls
+document.addEventListener('DOMContentLoaded', function() {
+  const slider = document.getElementById('photoSlider');
+  const leftBtn = document.getElementById('photoScrollLeft');
+  const rightBtn = document.getElementById('photoScrollRight');
+
+  if (slider && leftBtn && rightBtn) {
+    const getScrollAmount = () => slider.offsetWidth * 0.75;
+
+    leftBtn.addEventListener('click', () => {
+      slider.scrollBy({ left: -getScrollAmount(), behavior: 'smooth' });
+    });
+
+    rightBtn.addEventListener('click', () => {
+      slider.scrollBy({ left: getScrollAmount(), behavior: 'smooth' });
+    });
+  }
+});
+
+  
 </section>
 
 
